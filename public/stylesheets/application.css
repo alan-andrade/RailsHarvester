@@ -1,0 +1,18 @@
+body {
+  margin: 0 auto;
+  color: #333333; }
+  body h1 {
+    text-align: center;
+    margin-bottom: 0; }
+
+.container {
+  width: 1000px;
+  margin: 0 auto; }
+
+.slogan {
+  text-align: center;
+  font-size: x-small;
+  margin-top: 0px; }
+
+a:visited {
+  color: #8295a6; }

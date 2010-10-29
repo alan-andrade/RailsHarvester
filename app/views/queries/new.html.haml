@@ -1,5 +1,4 @@
-%p This is the RubyOnRails Harvester.
-= form_tag :queries do 
-  = label_tag :query
-  = text_field_tag :query
+= form_tag :queries, :class=>'query_form' do 
+  = text_field_tag :query,nil,:id=>'query_input'
+  %br/
   = submit_tag 'Search'

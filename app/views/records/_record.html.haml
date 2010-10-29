@@ -1,0 +1,3 @@
+= div_for record do 
+  %p{:class=>'header'}= link_to "#{record.title}", record.identifier, :target=>'_blank'
+  %p{:class=>'description'}= truncate(record.description, :length  => 400) || 'No description'

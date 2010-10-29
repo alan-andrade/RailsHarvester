@@ -2,10 +2,10 @@ require 'oai'
 
 class Harvester
   SITES = [
-            {
-              :site   =>  "http://catarina.udlap.mx/u_dl_a/tales/oai/requestETD.jsp",
-              :name   =>  "Universidad de las Americas Puebla, Electronic Thesis and Dissertation Archive "
-            },
+            #{
+            #  :site   =>  "http://catarina.udlap.mx/u_dl_a/tales/oai/requestETD.jsp",
+            #  :name   =>  "Universidad de las Americas Puebla, Electronic Thesis and Dissertation Archive "
+            #},
             {
               :site   =>  "http://ru.ffyl.unam.mx:8080/oai/request",
               :name   =>  "Repositorio de la Facultad de Filosofia y Letras. UNAM."

@@ -2,11 +2,13 @@
 !!!
 %html
   %head
-    %title Ruby Harvester
+    %title= @page_title || 'Ruby Harvester'
     = stylesheet_link_tag :all
     = javascript_include_tag :defaults
     = csrf_meta_tag
     
-  %body 
-    %h1 Ruby Harvester
-    = yield
+  %body
+    .container
+      %h1 Ruby Harvester
+      %p{:class=>'slogan'} The RubyOnRails Harvester
+      = yield

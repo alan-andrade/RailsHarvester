@@ -1,0 +1,23 @@
+.query_form {
+  text-align: center; }
+
+#query_input {
+  width: 600px;
+  padding: 10px;
+  font-size: 130%;
+  border: 1px dotted blue;
+  margin: 15px;
+  background: #8295a6; }
+
+.query_form input[type=submit] {
+  padding: 6px 10px;
+  -webkit-border-radius: 2px 2px;
+  border: solid 1px #999999;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#dddddd));
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 0px 1px 1px white;
+  line-height: 1; }
