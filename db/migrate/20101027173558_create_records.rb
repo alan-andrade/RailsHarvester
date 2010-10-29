@@ -4,7 +4,7 @@ class CreateRecords < ActiveRecord::Migration
       # Content tags
       t.string  :title
       t.string  :subject
-      t.text    :description  , :null =>  false
+      t.text    :description
       t.string  :source
       t.string  :language
       t.string  :relation

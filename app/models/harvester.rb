@@ -17,21 +17,43 @@ class Harvester
           ]
           
   def self.harvest
+    resumption_token  = nil
+    
     SITES.each do |site|
+      ## Connect with the Archives Provider
       client  = OAI::Client.new(site[:site])
+      
+      
       print "Client Name: #{site[:name]}\n"
-      client.list_records.each do |record|
-        print "Retrieving Records...\n"
+      print "Retrieving Records...\n"
+      
+      begin  ## Loop will finish until there are no more resumption tokens
+        ## Resumption Token Options for OAI
+        options = {} 
+        options[:resumption_token] = resumption_token unless resumption_token.nil?
+        ##
         
-        record_to_database  = Record.new
+        ## Retrieve Records from Provider
+        begin
+          records           = client.list_records(options)
+        end rescue OAI::Exception
+        ## Get the RT from the list_records verb
+        resumption_token  = records.resumption_token rescue nil
         
-        record.metadata.elements.first.each_element do |element|
-          #print "#{element.name}      ->  #{element.text}\n"
-          
-        end if record.metadata
-        
-      end
+        ## Iterate on the records
+        records.each do |record|
+          rec_to_db = Record.new
+          if record.metadata
+            record.metadata.elements.first.each_element do |element|          
+              rec_to_db.send(element.name + "=", element.text) if rec_to_db.attributes.has_key? element.name
+            end
+            p rec_to_db.identifier
+            rec_to_db.save
+          end #if        
+        end   #record
+      end while not resumption_token.nil?
     end
+    
   end
 end
 
