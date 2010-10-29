@@ -1,3 +1,10 @@
 = div_for record do 
   %p{:class=>'header'}= link_to "#{record.title}", record.identifier, :target=>'_blank'
   %p{:class=>'description'}= truncate(record.description, :length  => 400) || 'No description'
+  %p{:class=>'extra'}
+    = record.creator || 'No creator supplied'
+    &raquo;
+    = record.date.to_formatted_s(:long) rescue nil || 'No known date'
+  %p{:class=>'language'}
+    =record.language
+    

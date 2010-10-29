@@ -12,3 +12,10 @@
     font-size: x-small;
     color: #a69f93;
     padding-top: 5px; }
+  .record .extra {
+    font-size: x-small;
+    margin: 5px; }
+  .record .language {
+    text-align: right;
+    display: block;
+    font-size: 20px; }

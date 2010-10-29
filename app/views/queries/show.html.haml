@@ -1,7 +1,11 @@
--@page_title = 'Results'
-%p= "#{@records.size} results for '#{@query}'"
--if @records.size == 0
-  %p Intenta otro idioma
-= link_to raw("&laquo; Back"), new_query_path
+-@page_title = 'Harvester Results'
+#top_panel
+  %p 
+    %b= @records.size 
+    results for 
+    ="'#{@query}'"
+  -if @records.size == 0
+    %p Intenta otro idioma
+  = link_to raw("&laquo; Back"), new_query_path
 %hr
 =render @records
